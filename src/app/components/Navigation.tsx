@@ -54,7 +54,7 @@ export default function Navigation({ onNavigate }: NavigationProps) {
               onClick={() => onNavigate('home')}
               className="flex-shrink-0 cursor-pointer rounded focus:outline-none"
             >
-              <img src={logo} alt="Lab Logo" className="h-8 md:h-10" />
+              <img src={logo} alt="Lab Logo" className="h-8 md:h-11" />
             </button>
           </div>
 

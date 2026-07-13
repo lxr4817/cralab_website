@@ -254,11 +254,11 @@ export default function Home() {
 
       <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-6 py-14">
         <div className="max-w-2xl">
-          <p className="mb-1 text-[0.44rem] uppercase tracking-[0.22em] text-foreground/45 md:text-[0.65rem]">
+          <p className="mb-1 text-[0.44rem] uppercase tracking-[0.22em] text-foreground/45 md:text-[0.72rem]">
             Converged Reality and Arts Lab
           </p>
-          <h1 className="mb-2 text-2xl leading-none text-foreground md:mb-3 md:text-[3.25rem]">CRA Lab</h1>
-          <p className="max-w-none whitespace-nowrap text-[0.56rem] leading-3 text-foreground/68 md:text-[0.8rem] md:leading-4">
+          <h1 className="mb-2 text-2xl leading-none text-foreground md:mb-3 md:text-[3.58rem]">CRA Lab</h1>
+          <p className="max-w-none whitespace-nowrap text-[0.56rem] leading-3 text-foreground/68 md:text-[0.88rem] md:leading-5">
             가상현실, 예술, 인터랙션을 융합해 사람의 경험을 확장하는 연구와 콘텐츠를 만듭니다.
           </p>
         </div>
