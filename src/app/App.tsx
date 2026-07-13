@@ -19,8 +19,11 @@ const pageRoutes = new Set([
 
 const memberSectionRoutes = new Set([
   'phd-students',
+  'masters-students',
   'master’s-students',
   'undergraduate-research-assistants',
+  'masters-alumni',
+  'undergraduate-alumni',
   'ph-d-course',
   'master-course',
 ]);

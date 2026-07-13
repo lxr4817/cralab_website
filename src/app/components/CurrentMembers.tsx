@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import kimMinHunImage from '../../imports/members/optimized/mhk.jpg';
 import leeSeungHyunImage from '../../imports/members/optimized/shl.jpg';
 import ohYuRimImage from '../../imports/members/optimized/yro.jpg';
@@ -157,6 +158,14 @@ const courses: MemberCourse[] = [
   'Undergraduate Alumni',
 ];
 
+const courseSlugs: Record<MemberCourse, string> = {
+  'Ph.D. Students': 'phd-students',
+  'Master’s Students': 'masters-students',
+  'Undergraduate Research Assistants': 'undergraduate-research-assistants',
+  'Master’s Alumni': 'masters-alumni',
+  'Undergraduate Alumni': 'undergraduate-alumni',
+};
+
 const infoRows: Array<{ key: keyof MemberInfo; label: string }> = [
   { key: 'email', label: '이메일' },
 ];
@@ -235,6 +244,17 @@ function MemberCard({ member }: { member: Member }) {
 }
 
 export default function CurrentMembers() {
+  useEffect(() => {
+    const hash = decodeURIComponent(window.location.hash.replace('#', ''));
+    const target = Object.values(courseSlugs).includes(hash) ? document.getElementById(hash) : null;
+
+    if (target) {
+      window.requestAnimationFrame(() => {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  }, []);
+
   return (
     <div className="mx-auto max-w-7xl">
       <div className="space-y-10">
@@ -242,7 +262,7 @@ export default function CurrentMembers() {
           {courses.map((course) => (
             <a
               key={course}
-              href={`#${course.replaceAll(' ', '-').replaceAll('.', '').toLowerCase()}`}
+              href={`#${courseSlugs[course]}`}
               className="text-lg font-medium text-foreground transition-colors duration-200 hover:text-primary"
             >
               {course}
@@ -257,7 +277,7 @@ export default function CurrentMembers() {
             return (
               <section
                 key={course}
-                id={course.replaceAll(' ', '-').replaceAll('.', '').toLowerCase()}
+                id={courseSlugs[course]}
                 className="space-y-5"
               >
                 <div className="flex items-center justify-between border-b border-border/20 pb-3">
