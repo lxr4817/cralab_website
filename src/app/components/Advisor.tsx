@@ -39,6 +39,9 @@ export default function Advisor() {
               src={professorImage}
               alt="나정조 교수"
               className="w-48 h-48 object-cover rounded-lg shadow-md"
+              draggable={false}
+              onContextMenu={(event) => event.preventDefault()}
+              onDragStart={(event) => event.preventDefault()}
             />
           </div>
           <div className="flex-1 space-y-4">

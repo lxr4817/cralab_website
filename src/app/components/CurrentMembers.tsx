@@ -7,10 +7,10 @@ import kimMiSoImage from '../../imports/members/optimized/msk.jpg';
 import kimYeRinImage from '../../imports/members/optimized/yrk.jpg';
 import kimYeonWooImage from '../../imports/members/optimized/ywk.jpg';
 import seoJeongYunImage from '../../imports/members/optimized/jys.jpg';
-import baeSeoYeonImage from '../../imports/members/optimized/bae-seo-yeon.jpg';
-import yuDaheeImage from '../../imports/members/optimized/yu-dahee.jpg';
-import jungYunseoImage from '../../imports/members/optimized/jung-yunseo.jpg';
-import choiSolImage from '../../imports/members/optimized/choi-sol.jpg';
+import baeSeoYeonImage from '../../imports/members/optimized/syb.jpg';
+import yuDaheeImage from '../../imports/members/optimized/yd.jpg';
+import jungYunseoImage from '../../imports/members/optimized/jy.jpg';
+import choiSolImage from '../../imports/members/optimized/cs.jpg';
 
 type MemberCourse =
   | 'Ph.D. Students'
@@ -230,6 +230,9 @@ function MemberCard({ member }: { member: Member }) {
               alt={`${member.name} profile`}
               className="h-[202px] w-[168px] object-cover object-top [image-rendering:auto]"
               loading="lazy"
+              draggable={false}
+              onContextMenu={(event) => event.preventDefault()}
+              onDragStart={(event) => event.preventDefault()}
             />
           ) : (
             <div className="flex h-[202px] w-[168px] items-center justify-center bg-accent/25 text-3xl font-semibold text-foreground/35">
