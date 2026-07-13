@@ -15,7 +15,7 @@ type MemberCourse =
   | 'Ph.D. Students'
   | 'Master’s Students'
   | 'Undergraduate Research Assistants'
-  | 'Master Alumni'
+  | 'Master’s Alumni'
   | 'Undergraduate Alumni';
 
 interface MemberInfo {
@@ -43,7 +43,7 @@ const members: Member[] = [
   {
     name: '이승현',
     nameEn: 'Seunghyun Lee',
-    course: 'Master Alumni',
+    course: 'Master’s Alumni',
     image: leeSeungHyunImage,
     info: {
       email: 'ssseunghyunlee@gmail.com',
@@ -52,7 +52,7 @@ const members: Member[] = [
   {
     name: '오유림',
     nameEn: 'Yurim Oh',
-    course: 'Master Alumni',
+    course: 'Master’s Alumni',
     image: ohYuRimImage,
     info: {
       email: 'yurimblossom@duksung.ac.kr',
@@ -61,7 +61,7 @@ const members: Member[] = [
   {
     name: '윤해주',
     nameEn: 'Haeju Yoon',
-    course: 'Master Alumni',
+    course: 'Master’s Alumni',
     image: yoonHaeJuImage,
     info: {
       email: 'gngn6751@duksung.ac.kr',
@@ -153,7 +153,7 @@ const courses: MemberCourse[] = [
   'Ph.D. Students',
   'Master’s Students',
   'Undergraduate Research Assistants',
-  'Master Alumni',
+  'Master’s Alumni',
   'Undergraduate Alumni',
 ];
 
