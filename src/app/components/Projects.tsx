@@ -1,4 +1,12 @@
 import sowondeungVideo from '../../imports/projects/sowondeung.mp4';
+import smartCareTutorialVideo from '../../imports/projects/smart-care-vr/tutorial.mp4';
+import smartCareSpace1Video from '../../imports/projects/smart-care-vr/space-1-hand-tracking.mp4';
+import smartCareSpace4Video from '../../imports/projects/smart-care-vr/space-4-hand-tracking.mp4';
+
+export interface ProjectVideo {
+  title: string;
+  src: string;
+}
 
 export interface Project {
   slug: string;
@@ -8,6 +16,7 @@ export interface Project {
   period?: string;
   description: string;
   video?: string;
+  videos?: ProjectVideo[];
 }
 
 export const projects: Project[] = [
@@ -18,6 +27,11 @@ export const projects: Project[] = [
     period: '2024.07 ~ 2024.10 / 2025.09 ~ 2025.11',
     description:
       '국립재활원 내 1차 및 4차 스마트돌봄스페이스를 비수도권 사용자들도 경험할 수 있도록 디지털트윈 기반으로 공간을 구축하고, VR 콘텐츠로 제작해 편의성 및 접근성을 향상',
+    videos: [
+      { title: '튜토리얼', src: smartCareTutorialVideo },
+      { title: '1차 스페이스', src: smartCareSpace1Video },
+      { title: '4차 스페이스', src: smartCareSpace4Video },
+    ],
   },
   {
     slug: 'sowondeung',

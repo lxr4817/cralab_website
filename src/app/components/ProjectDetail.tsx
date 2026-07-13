@@ -50,17 +50,24 @@ export default function ProjectDetail({ slug, onBack }: ProjectDetailProps) {
           </div>
         </header>
 
-        {project.video && (
+        {(project.videos || project.video) && (
           <section className="space-y-4">
             <h2 className="text-2xl text-foreground">Result</h2>
-            <div className="overflow-hidden border border-border/35 bg-black">
-              <video
-                src={project.video}
-                className="aspect-video w-full bg-black object-contain"
-                controls
-                playsInline
-                preload="metadata"
-              />
+            <div className="grid gap-6">
+              {(project.videos ?? [{ title: 'Result', src: project.video! }]).map((video) => (
+                <div key={video.src} className="space-y-3">
+                  <h3 className="text-lg text-foreground/75">{video.title}</h3>
+                  <div className="overflow-hidden border border-border/35 bg-black">
+                    <video
+                      src={video.src}
+                      className="aspect-video w-full bg-black object-contain"
+                      controls
+                      playsInline
+                      preload="metadata"
+                    />
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         )}
