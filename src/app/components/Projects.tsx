@@ -29,8 +29,8 @@ export const projects: Project[] = [
       '국립재활원 내 1차 및 4차 스마트돌봄스페이스를 비수도권 사용자들도 경험할 수 있도록 디지털트윈 기반으로 공간을 구축하고, VR 콘텐츠로 제작해 편의성 및 접근성을 향상',
     videos: [
       { title: '튜토리얼', src: smartCareTutorialVideo },
-      { title: '1차 스페이스', src: smartCareSpace1Video },
-      { title: '4차 스페이스', src: smartCareSpace4Video },
+      { title: '1차 스페이스 구축', src: smartCareSpace1Video },
+      { title: '4차 스페이스 구축', src: smartCareSpace4Video },
     ],
   },
   {
