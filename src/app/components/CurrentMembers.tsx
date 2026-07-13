@@ -7,8 +7,16 @@ import kimYeRinImage from '../../imports/members/optimized/yrk.jpg';
 import kimYeonWooImage from '../../imports/members/optimized/ywk.jpg';
 import seoJeongYunImage from '../../imports/members/optimized/jys.jpg';
 import baeSeoYeonImage from '../../imports/members/optimized/bae-seo-yeon.jpg';
+import yuDaheeImage from '../../imports/members/optimized/yu-dahee.jpg';
+import jungYunseoImage from '../../imports/members/optimized/jung-yunseo.jpg';
+import choiSolImage from '../../imports/members/optimized/choi-sol.jpg';
 
-type MemberCourse = 'Ph.D. Students' | 'Master’s Students' | 'Undergraduate Research Assistants';
+type MemberCourse =
+  | 'Ph.D. Students'
+  | 'Master’s Students'
+  | 'Undergraduate Research Assistants'
+  | 'Master Alumni'
+  | 'Undergraduate Alumni';
 
 interface MemberInfo {
   email?: string;
@@ -35,7 +43,7 @@ const members: Member[] = [
   {
     name: '이승현',
     nameEn: 'Seunghyun Lee',
-    course: 'Master’s Students',
+    course: 'Master Alumni',
     image: leeSeungHyunImage,
     info: {
       email: 'ssseunghyunlee@gmail.com',
@@ -44,7 +52,7 @@ const members: Member[] = [
   {
     name: '오유림',
     nameEn: 'Yurim Oh',
-    course: 'Master’s Students',
+    course: 'Master Alumni',
     image: ohYuRimImage,
     info: {
       email: 'yurimblossom@duksung.ac.kr',
@@ -53,7 +61,7 @@ const members: Member[] = [
   {
     name: '윤해주',
     nameEn: 'Haeju Yoon',
-    course: 'Master’s Students',
+    course: 'Master Alumni',
     image: yoonHaeJuImage,
     info: {
       email: 'gngn6751@duksung.ac.kr',
@@ -97,7 +105,7 @@ const members: Member[] = [
   {
     name: '서정윤',
     nameEn: 'Jeongyun Seo',
-    course: 'Undergraduate Research Assistants',
+    course: 'Undergraduate Alumni',
     image: seoJeongYunImage,
     info: {
       email: 'bellita@naver.com',
@@ -112,12 +120,41 @@ const members: Member[] = [
       email: 'dexrchive@duksung.ac.kr',
     },
   },
+  {
+    name: '유다희',
+    nameEn: 'Yu Dahee',
+    course: 'Undergraduate Research Assistants',
+    image: yuDaheeImage,
+    info: {
+      email: '20241193@duksung.ac.kr',
+    },
+  },
+  {
+    name: '정윤서',
+    nameEn: 'Jung Yunseo',
+    course: 'Undergraduate Research Assistants',
+    image: jungYunseoImage,
+    info: {
+      email: 'binseo22@duksung.ac.kr',
+    },
+  },
+  {
+    name: '최솔',
+    nameEn: 'Choi Sol',
+    course: 'Undergraduate Research Assistants',
+    image: choiSolImage,
+    info: {
+      email: 'sooolki@duksung.ac.kr',
+    },
+  },
 ];
 
 const courses: MemberCourse[] = [
   'Ph.D. Students',
   'Master’s Students',
   'Undergraduate Research Assistants',
+  'Master Alumni',
+  'Undergraduate Alumni',
 ];
 
 const infoRows: Array<{ key: keyof MemberInfo; label: string }> = [

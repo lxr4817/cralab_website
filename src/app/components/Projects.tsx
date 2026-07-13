@@ -89,13 +89,9 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
         </div>
 
         <div className="grid gap-6">
-          {projects.map((project, index) => (
-            <button
-              key={project.title}
-              type="button"
-              onClick={() => onProjectSelect(project.slug)}
-              className="group cursor-pointer border border-border/35 bg-background p-7 text-left transition-colors duration-200 hover:border-foreground/25 focus:outline-none focus:ring-2 focus:ring-ring/35"
-            >
+          {projects.map((project, index) => {
+            const hasDetail = Boolean(project.video || project.videos?.length);
+            const content = (
               <div className="grid gap-6 lg:grid-cols-[92px_minmax(0,1fr)]">
                 <div className="flex h-16 w-16 items-center justify-center rounded-md bg-accent/30 text-lg font-semibold text-primary">
                   {String(index + 1).padStart(2, '0')}
@@ -116,13 +112,37 @@ export default function Projects({ onProjectSelect }: ProjectsProps) {
                   </div>
 
                   <p className="leading-7 text-foreground/72">{project.description}</p>
-                  <p className="text-sm font-medium text-primary/75 transition-colors duration-200 group-hover:text-primary">
-                    자세히 보기
-                  </p>
+                  {hasDetail && (
+                    <p className="text-sm font-medium text-primary/75 transition-colors duration-200 group-hover:text-primary">
+                      자세히 보기
+                    </p>
+                  )}
                 </div>
               </div>
-            </button>
-          ))}
+            );
+
+            if (hasDetail) {
+              return (
+                <button
+                  key={project.title}
+                  type="button"
+                  onClick={() => onProjectSelect(project.slug)}
+                  className="group cursor-pointer border border-border/35 bg-background p-7 text-left transition-colors duration-200 hover:border-foreground/25 focus:outline-none focus:ring-2 focus:ring-ring/35"
+                >
+                  {content}
+                </button>
+              );
+            }
+
+            return (
+              <article
+                key={project.title}
+                className="border border-border/35 bg-background p-7 transition-colors duration-200 hover:border-foreground/25"
+              >
+                {content}
+              </article>
+            );
+          })}
         </div>
       </div>
     </div>

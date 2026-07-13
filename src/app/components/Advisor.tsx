@@ -55,7 +55,7 @@ export default function Advisor() {
               </p>
               <p>
                 <span className="inline-block w-24">Address:</span>
-                <span>덕성여자대학교 차미리사관 341호</span>
+                <span>덕성여자대학교 차미리사기념관 341호</span>
               </p>
             </div>
           </div>
