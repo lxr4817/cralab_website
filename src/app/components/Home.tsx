@@ -252,7 +252,7 @@ export default function Home() {
     <section ref={sectionRef} className="relative isolate min-h-[calc(100vh-4rem)] overflow-hidden bg-white">
       <div ref={wrapRef} className="absolute inset-0 z-0 overflow-hidden" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-6 py-14">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-6 pb-20 pt-0 md:pb-28">
         <div className="max-w-2xl">
           <p className="mb-1 text-[0.44rem] uppercase tracking-[0.22em] text-foreground/45 md:text-[0.72rem]">
             Converged Reality and Arts Lab
