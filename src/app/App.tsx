@@ -5,6 +5,7 @@ import Advisor from './components/Advisor';
 import Papers from './components/Papers';
 import CurrentMembers from './components/CurrentMembers';
 import Projects from './components/Projects';
+import ProjectDetail from './components/ProjectDetail';
 import Home from './components/Home';
 
 const pageRoutes = new Set([
@@ -24,35 +25,40 @@ const memberSectionRoutes = new Set([
   'master-course',
 ]);
 
-function getPageFromHash() {
+function getRouteFromHash() {
   const rawHash = window.location.hash.replace('#', '');
   const hash = rawHash ? decodeURIComponent(rawHash) : '';
 
   if (!hash) {
-    return 'home';
+    return { page: 'home' };
+  }
+
+  if (hash.startsWith('projects/')) {
+    return { page: 'project-detail', projectSlug: hash.replace('projects/', '') };
   }
 
   if (pageRoutes.has(hash)) {
-    return hash;
+    return { page: hash };
   }
 
   if (hash === 'papers') {
-    return 'publications';
+    return { page: 'publications' };
   }
 
   if (memberSectionRoutes.has(hash)) {
-    return 'current-members';
+    return { page: 'current-members' };
   }
 
-  return 'home';
+  return { page: 'home' };
 }
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<string>(() => getPageFromHash());
+  const [route, setRoute] = useState(() => getRouteFromHash());
+  const currentPage = route.page;
 
   useEffect(() => {
     function handleHashChange() {
-      setCurrentPage(getPageFromHash());
+      setRoute(getRouteFromHash());
     }
 
     window.addEventListener('hashchange', handleHashChange);
@@ -60,8 +66,14 @@ export default function App() {
   }, []);
 
   function handleNavigate(page: string) {
-    setCurrentPage(page);
+    setRoute({ page });
     window.location.hash = page;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function handleProjectSelect(slug: string) {
+    setRoute({ page: 'project-detail', projectSlug: slug });
+    window.location.hash = `projects/${slug}`;
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -76,7 +88,9 @@ export default function App() {
       case 'publications':
         return <Papers />;
       case 'projects':
-        return <Projects />;
+        return <Projects onProjectSelect={handleProjectSelect} />;
+      case 'project-detail':
+        return <ProjectDetail slug={route.projectSlug ?? ''} onBack={() => handleNavigate('projects')} />;
       default:
         return <Home />;
     }
