@@ -57,7 +57,7 @@ export default function Home() {
       const size = circleSizes[Math.floor(Math.random() * circleSizes.length)];
       const margin = size * 0.34;
       const tone = randomInt(12, 238);
-      const opacity = randomBetween(0.58, 0.96);
+      const opacity = randomBetween(0.22, 0.58);
       const blur = randomBetween(0, 1.8);
       const x = randomBetween(-margin, width + margin);
       const y = randomBetween(-margin, height + margin);
@@ -249,16 +249,16 @@ export default function Home() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative isolate min-h-[calc(100vh-6rem)] overflow-hidden bg-white">
+    <section ref={sectionRef} className="relative isolate min-h-[calc(100vh-4rem)] overflow-hidden bg-white">
       <div ref={wrapRef} className="absolute inset-0 z-0 overflow-hidden" />
 
-      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-6rem)] max-w-7xl items-center px-6 py-20">
-        <div className="max-w-3xl">
-          <p className="mb-5 text-sm uppercase tracking-[0.22em] text-foreground/45">
+      <div className="relative z-10 mx-auto flex min-h-[calc(100vh-4rem)] max-w-7xl items-center px-6 py-14">
+        <div className="max-w-2xl">
+          <p className="mb-1 text-[0.44rem] uppercase tracking-[0.22em] text-foreground/45 md:text-[0.65rem]">
             Converged Reality and Arts Lab
           </p>
-          <h1 className="mb-6 text-5xl leading-tight text-foreground md:text-7xl">CRA Lab</h1>
-          <p className="max-w-none whitespace-nowrap text-lg leading-8 text-foreground/68">
+          <h1 className="mb-2 text-2xl leading-none text-foreground md:mb-3 md:text-[3.25rem]">CRA Lab</h1>
+          <p className="max-w-none whitespace-nowrap text-[0.56rem] leading-3 text-foreground/68 md:text-[0.8rem] md:leading-4">
             가상현실, 예술, 인터랙션을 융합해 사람의 경험을 확장하는 연구와 콘텐츠를 만듭니다.
           </p>
         </div>

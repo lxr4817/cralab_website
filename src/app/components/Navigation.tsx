@@ -48,13 +48,13 @@ export default function Navigation({ onNavigate }: NavigationProps) {
   return (
     <nav className="relative z-[100] border-b border-border/50 bg-background/95 backdrop-blur-sm">
       <div className="mx-auto max-w-[1680px] px-5 sm:px-8 lg:px-12 2xl:px-16">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <button
               onClick={() => onNavigate('home')}
               className="flex-shrink-0 cursor-pointer rounded focus:outline-none"
             >
-              <img src={logo} alt="Lab Logo" className="h-16" />
+              <img src={logo} alt="Lab Logo" className="h-8 md:h-10" />
             </button>
           </div>
 
