@@ -14,6 +14,10 @@ const images = [
   ['yrk.jpeg', 'yrk.jpg'],
   ['ywk.jpeg', 'ywk.jpg'],
   ['jys.jpg', 'jys.jpg'],
+  ['syb.jpeg', 'syb.jpg'],
+  ['yd.jpg', 'yd.jpg'],
+  ['jy.png', 'jy.jpg'],
+  ['cs.png', 'cs.jpg'],
 ];
 
 async function main() {
